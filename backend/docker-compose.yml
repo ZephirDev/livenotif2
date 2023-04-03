@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+
+  postgresql:
+    image: postgres:12
+    environment:
+      POSTGRES_DB: livenotif
+      POSTGRES_USER: livenotif
+      POSTGRES_PASSWORD: livenotif
+    volumes:
+      - ./.data/postgresql:/var/lib/postgresql/data
+    ports:
+      - ${POSTGRESQL_PORT:-5432}:5432
